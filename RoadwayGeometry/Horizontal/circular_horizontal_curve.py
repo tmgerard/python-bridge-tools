@@ -80,12 +80,10 @@ class CircularHorizontalCurve:
         return self.pc_station <= station <= self.pt_station
 
     def __calculate_interior_angle(self) -> float:
-        delta = self.angle_out - self.angle_in
+        angle_out = self.angle_out.angle if self.angle_out.angle <= math.pi else self.angle_out.angle - 2 * math.pi
+        angle_in = self.angle_in.angle if self.angle_in.angle <= math.pi else self.angle_in.angle - 2 * math.pi
 
-        if delta.angle > math.pi:  # curve right
-            return 2.0 * math.pi - delta.angle
-        else:  # curve left
-            return delta.angle
+        return angle_out - angle_in
 
     def __eq__(self, other: 'CircularHorizontalCurve'):
         return effectively_equal(self.pi_station, other.pi_station) and \
