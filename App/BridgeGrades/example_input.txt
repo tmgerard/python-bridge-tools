@@ -1,0 +1,40 @@
+# Example Bridge Grade Input
+
+PROJECT INFORMATION
+# Input Project Information
+# [Job Number]  [Description]
+040621  Highway 23 Over the Mulberry River
+
+HORIZONTAL
+# Input Horizontal Curve Information
+# [PI Station]  [Bearing In]       [Bearing Out]     [Degree of Curvature]
+205+28.96       N 06° 06' 01" E    N 31° 53' 20" W    06° 30' 00"
+216+99.56       N 31° 53' 20" W    N 34° 26' 44" W    00° 30' 00"
+
+TRANSITION
+# Input Superelevation Transition Information
+# [Begin Station]  [End Station]  [Max Super(%)]  [Normal Crown(-%)]  [EXIT|ENTRANCE]
+206+20.00           209+70.00      10.0%           -2.0%               EXIT
+
+VERTICAL
+# Input Vertical Curve Information
+# [PVI Station]  [PVI Elevation]  [Grade In(%)]  [Grade Out(%)]  [Length]
+208+60.00         713.16           1.83%          -0.21%          250.0
+215+50.00         711.71           -0.21%         -1.65%          200.0
+
+CROSS-SECTION
+# [CL to Rotation Point - FEET]
+12
+
+REPORT STATIONS
+# Input Station to Report Grade Data
+# [Station]  [Description]
+209+14.92    Begin Bridge
+209+71.00    Bent 2
+210+26.00    Bent 3
+211+41.00    Bent 4
+212+56.00    Bent 5
+213+71.00    Bent 6
+214+26.00    Bent 7
+214+81.00    Bent 8
+215+37.08    End Bridge
