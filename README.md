@@ -1,6 +1,6 @@
 # Python Bridge Tools
 
-This repository holds tools I am creating to help me check bridge structural plans and details.
+This repository holds tools I am creating to help me check bridge structural designs and details.
 
 ## Bridge Grades
 
