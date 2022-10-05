@@ -8,7 +8,10 @@ The bridge grades tool helps calculate grades along a roadway alignment. It curr
 
 ## Future Tools I Would Like to Add
 
-    - Plate girder properties
-    - Rolled steel shapes library
-    - AASHTO LRFD steel and concrete design calculations
-    - USGS Design Ground Motions tool (Online tool was discontinued but values can be queried from [USGS website](https://earthquake.usgs.gov/hazards/designmaps/)
+    1. Plate girder properties
+    2. Rolled steel shapes library
+    3. AASHTO LRFD steel and concrete design calculations
+    4. USGS Design Ground Motions tool (Online tool was discontinued but values can be queried from the USGS website
+
+## References
+[USGS Design Ground Motions Website](https://earthquake.usgs.gov/hazards/designmaps/)
