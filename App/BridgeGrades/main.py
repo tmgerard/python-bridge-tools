@@ -26,5 +26,6 @@ if __name__ == '__main__':
         reporter = GradeReporter(parser.project_information, parser.alignment, parser.key_stations)
 
         save_to_file(reporter)
+
     except ValueError as e:
         print(e)
