@@ -83,7 +83,7 @@ class CircularHorizontalCurve:
         angle_out = self.angle_out.angle if self.angle_out.angle <= math.pi else self.angle_out.angle - 2 * math.pi
         angle_in = self.angle_in.angle if self.angle_in.angle <= math.pi else self.angle_in.angle - 2 * math.pi
 
-        return angle_out - angle_in
+        return math.fabs(angle_out - angle_in)
 
     def __eq__(self, other: 'CircularHorizontalCurve'):
         return effectively_equal(self.pi_station, other.pi_station) and \
