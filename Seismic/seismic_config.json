@@ -1,0 +1,6 @@
+{
+  "USGSWebQuery": {
+    "AASHTO-2009": "https://earthquake.usgs.gov/ws/designmaps/aashto-2009.json?latitude={0}&longitude={1}&siteClass={2}&title={3}",
+    "ASCE7-16": "https://earthquake.usgs.gov/ws/designmaps/asce7-16.json?latitude={0}&longitude={1}&riskCategory={2}&siteClass={3}&title={4}"
+  }
+}
