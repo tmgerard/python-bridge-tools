@@ -1,9 +1,11 @@
 import time
 import os
 
+from App.BridgeGrades.main import bridge_grade_main
+
 
 def program_welcome():
-    print('Bridge Tools\n')
+    print('Bridge Tools')
 
 
 def main_loop():
@@ -20,13 +22,12 @@ def main_loop():
             handle_user_input(user_input)
     except ValueError as e:
         print('n' + e.args[0])
-        time.sleep(2)  # keep window open long enough to see error message
+        time.sleep(1.5)  # keep window open long enough to see error message
 
 
 def handle_user_input(user_input):
     if user_input == '1':
-        clear_console()
-        pass
+        bridge_grades()
     elif user_input == '2':
         clear_console()
         pass
@@ -34,6 +35,15 @@ def handle_user_input(user_input):
         pass
     else:
         print('\nPlease select a valid option or type \'q\' to exit\n')
+
+
+def bridge_grades():
+    clear_console()
+    print('Waiting for user input')
+    bridge_grade_main()
+    print('Returning to main menu.')
+    time.sleep(1.5)
+    clear_console()
 
 
 def clear_console():

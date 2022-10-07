@@ -1,7 +1,4 @@
-import os
-
 from App.BridgeGrades.Output.grade_reporter import GradeReporter
-import tkinter as tk
 from tkinter import filedialog
 
 

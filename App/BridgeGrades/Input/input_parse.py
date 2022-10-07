@@ -3,7 +3,7 @@ import re
 from .input_sections import InputSections
 from .parse_project_info import parse_project_info
 from .parse_cross_section import parse_distance_to_rotation_point
-from RoadwayGeometry import RoadwayAlignment
+from RoadwayGeometry.roadway_alignment import RoadwayAlignment
 from RoadwayGeometry.Parse import parse_horizontal_curve, parse_vertical_curve, parse_superelevation_transition
 from RoadwayGeometry.Parse import parse_key_station
 from RoadwayGeometry.Vertical import VerticalAlignment

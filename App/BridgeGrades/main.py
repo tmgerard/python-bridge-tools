@@ -2,15 +2,16 @@ import os
 import sys
 import tkinter as tk
 from tkinter import filedialog
+import time
 
 parent_path = os.path.normpath(os.path.join(os.getcwd(), '..', '..'))
 sys.path.append(parent_path)
 
-from Input.input_parse import BridgeGradesInputParser
-from Output.grade_reporter import GradeReporter
-from Output.output import save_to_file
+from .Input.input_parse import BridgeGradesInputParser
+from .Output.grade_reporter import GradeReporter
+from .Output.output import save_to_file
 
-if __name__ == '__main__':
+def bridge_grade_main():
     try:
         root = tk.Tk()
         root.withdraw()
@@ -28,4 +29,13 @@ if __name__ == '__main__':
         save_to_file(reporter)
 
     except ValueError as e:
-        print(e)
+        print(e.args[1])
+        time.sleep(1.5)
+
+    except FileNotFoundError as e:
+        print(e.args[1])
+        time.sleep(1.5)
+
+
+if __name__ == '__main__':
+    bridge_grade_main()
