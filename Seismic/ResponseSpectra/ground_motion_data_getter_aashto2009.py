@@ -13,7 +13,7 @@ class GroundMotionDataGetterAASHTO2009:
     def __init__(self, config):
         self.__web_query_url = config['USGSWebQuery']['AASHTO-2009']
 
-    def get_ground_motion_data(self, latitude: float, longitude: float, site_class: string, title=""):
+    def get_ground_motion_data(self, latitude: string, longitude: string, site_class: string, title=""):
         """
         Queries USGS data for design response spectrum values.
         :param latitude: project latitude

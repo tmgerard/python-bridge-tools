@@ -101,7 +101,7 @@ class GroundMotionDataAASHTO2009:
         The site coefficient (fv) for S1 from Table 3.4.2.3-1 of the AASHTO Seismic Guide Specifications
         :return:
         """
-        return self.__data['s1']
+        return self.__data['fv']
 
     @property
     def design_one_second_spectral_acceleration(self):

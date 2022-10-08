@@ -5,7 +5,7 @@ from Seismic.ResponseSpectra.ground_motion_data_aashto2009 import GroundMotionDa
 
 class DesignSpectrumPlotterAASHTO2009:
 
-    def __init(self, seismic_data: GroundMotionDataAASHTO2009):
+    def __init__(self, seismic_data: GroundMotionDataAASHTO2009):
         self.__data = seismic_data
 
     def plot(self):

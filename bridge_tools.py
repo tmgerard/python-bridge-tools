@@ -2,6 +2,7 @@ import time
 import os
 
 from App.BridgeGrades.main import bridge_grade_main
+from App.SeismicData.main import seismic_data_main
 
 
 def program_welcome():
@@ -30,7 +31,8 @@ def handle_user_input(user_input):
         bridge_grades()
     elif user_input == '2':
         clear_console()
-        pass
+        seismic_data_main()
+        clear_console()
     elif user_input == 'q':
         pass
     else:
