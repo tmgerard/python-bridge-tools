@@ -9,6 +9,7 @@ class GroundMotionDataGetterAASHTO2009:
     """
 
     __valid_site_classes = ['A', 'B', 'C', 'D', 'E']
+    URL_SPACE = '%20'
 
     def __init__(self, config):
         self.__web_query_url = config['USGSWebQuery']['AASHTO-2009']
@@ -24,7 +25,10 @@ class GroundMotionDataGetterAASHTO2009:
         """
         self.__check_site_class(site_class.upper())
 
-        request_url = self.__web_query_url.format(latitude, longitude, site_class.upper(), title)
+        request_url = self.__web_query_url.format(latitude,
+                                                  longitude,
+                                                  site_class.upper(),
+                                                  title.replace(' ', self.URL_SPACE))
         with urllib.request.urlopen(request_url) as url:
             data = json.loads(url.read().decode())
 
