@@ -8,7 +8,7 @@ The bridge grades tool helps calculate grades along a roadway alignment. It curr
 
 ## Seismic Ground Motion Data
 
-This tool aids in building a web query to get sesimc response spectrum data from the [USGS Design Ground Motions Website](https://earthquake.usgs.gov/hazards/designmaps/). Currently the tool only handles queries for the 2009 AASHTO  Guide Specifications for LRFD Bridge Design and outputs basic seismic data to determine the seismic category and a plot of the response spectrum.
+This tool aids in building a web query to get seismic response spectrum data from the [USGS Design Ground Motions Website](https://earthquake.usgs.gov/hazards/designmaps/). Currently, the tool only handles queries for the 2009 AASHTO Guide Specifications for LRFD Bridge Design and outputs basic seismic data to determine the seismic category and a plot of the response spectrum.
 
 Documentation for the query and json output can be found on the [USGS documentation page for AASHTO 2009](https://earthquake.usgs.gov/ws/designmaps/aashto-2009.html).
 
