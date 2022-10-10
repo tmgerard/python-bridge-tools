@@ -37,7 +37,6 @@ class GroundMotionDataGetterAASHTO2009:
     def __check_site_class(self, site_class: string):
         """
         The AASHTO 2009 Guide Specifications specify site classes A, B, C, D, and E
-        :param site_class:
         """
         if not site_class.upper() in self.__valid_site_classes:
             raise ValueError('Site class undefined by AASHTO 2009 Guide Specifications')
