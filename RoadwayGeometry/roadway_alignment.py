@@ -25,7 +25,7 @@ class RoadwayAlignment:
         super = self.get_superelevation_at(station)
         normal_crown_slope = math.fabs(self.alignment_transitions.get_transition(station).normal_crown_slope)
 
-        if math.fabs(super) < math.fabs(normal_crown_slope):
+        if math.fabs(super) <= math.fabs(normal_crown_slope):
             return self.vertical.elevation_at(station)
         else:
             return self.vertical.elevation_at(station) + self.to_rotation_point * (-normal_crown_slope + super)
