@@ -37,3 +37,5 @@ The seismic ground motion data tool uses **matplotlib** to generate the response
 
 ## References
 [USGS Design Ground Motions Website](https://earthquake.usgs.gov/hazards/designmaps/)
+
+[FHWA Bridge Geometry Manual](https://www.fhwa.dot.gov/bridge/pubs/hif22034.pdf)
