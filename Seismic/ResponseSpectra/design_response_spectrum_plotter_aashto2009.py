@@ -1,4 +1,4 @@
-from matplotlib.pyplot import plot, show, title, xlabel, ylabel, annotate, scatter
+from matplotlib.pyplot import plot, show, title, xlabel, ylabel, annotate, scatter, axis
 
 from Seismic.ResponseSpectra.ground_motion_data_aashto2009 import GroundMotionDataAASHTO2009
 
@@ -23,9 +23,8 @@ class DesignSpectrumPlotterAASHTO2009:
         ts = self.__data.one_second_spectral_acceleration / self.__data.design_short_period_spectral_acceleration
         td = 0.2 * ts
 
-        scatter([0.0, td, 1.0], [self.__data.design_peak_ground_acceleration,
-                                 self.__data.design_short_period_spectral_acceleration,
-                                 self.__data.design_one_second_spectral_acceleration])
+        scatter([0.0, 1.0], [self.__data.design_peak_ground_acceleration,
+                             self.__data.design_one_second_spectral_acceleration])
         annotate('As = {0}'.format(self.__data.design_peak_ground_acceleration),
                  (0.0, self.__data.design_peak_ground_acceleration),
                  textcoords='offset points', xytext=(5, -5), ha='left')
@@ -33,6 +32,10 @@ class DesignSpectrumPlotterAASHTO2009:
                  (1.0, self.__data.design_one_second_spectral_acceleration),
                  textcoords='offset points', xytext=(5, 5), ha='left')
         annotate('sds = {0}'.format(self.__data.design_short_period_spectral_acceleration),
-                 (td, self.__data.design_short_period_spectral_acceleration),
+                 (0.5 * (td + ts), self.__data.design_short_period_spectral_acceleration),
                  textcoords='offset points', xytext=(5, 5), ha='left')
+
+        # set the axis ranges
+        axis([period[0], period[-1], 0, self.__data.design_short_period_spectral_acceleration + 0.25])
+
         show()
