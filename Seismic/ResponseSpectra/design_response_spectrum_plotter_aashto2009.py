@@ -19,13 +19,20 @@ class DesignSpectrumPlotterAASHTO2009:
         xlabel('Period')
         ylabel('Acceleration')
 
-        # label pga and sd1
-        scatter([0.0, 1.0], [self.__data.design_peak_ground_acceleration,
-                             self.__data.design_one_second_spectral_acceleration])
+        # label pga, sds, and sd1
+        ts = self.__data.one_second_spectral_acceleration / self.__data.design_short_period_spectral_acceleration
+        td = 0.2 * ts
+
+        scatter([0.0, td, 1.0], [self.__data.design_peak_ground_acceleration,
+                                 self.__data.design_short_period_spectral_acceleration,
+                                 self.__data.design_one_second_spectral_acceleration])
         annotate('As = {0}'.format(self.__data.design_peak_ground_acceleration),
                  (0.0, self.__data.design_peak_ground_acceleration),
-                 textcoords="offset points", xytext=(5, -5), ha='left')
+                 textcoords='offset points', xytext=(5, -5), ha='left')
         annotate('sd1 = {0}'.format(self.__data.design_one_second_spectral_acceleration),
                  (1.0, self.__data.design_one_second_spectral_acceleration),
-                 textcoords="offset points", xytext=(5, 5), ha='left')
+                 textcoords='offset points', xytext=(5, 5), ha='left')
+        annotate('sds = {0}'.format(self.__data.design_short_period_spectral_acceleration),
+                 (td, self.__data.design_short_period_spectral_acceleration),
+                 textcoords='offset points', xytext=(5, 5), ha='left')
         show()
