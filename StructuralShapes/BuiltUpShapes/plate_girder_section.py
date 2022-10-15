@@ -47,7 +47,15 @@ class PlateGirderSection:
         """
         Warping constant
         """
-        raise NotImplementedError()
+        # See Roark's Formulas for Stress and Strain Table 10.2
+        h = self.web_plate.height
+        t1 = self.top_flange.height
+        b1 = self.bottom_flange.width
+        t2 = self.bottom_flange.height
+        b2 = self.bottom_flange.width
+
+        return (h ** 2 * t1 * t2 * b1 ** 3 * b2 ** 3) / \
+               (12.0 * (t1 * b1 ** 3 + t2 * b2 ** 3))
 
     @property
     def depth(self) -> float:
@@ -85,17 +93,20 @@ class PlateGirderSection:
         """
         Torsional constant
         """
-        raise NotImplementedError()
+        # See Roark's Formulas for Stress and Strain Table 10.2
+        return (self.top_flange.height ** 3 * self.top_flange.width +
+                self.bottom_flange.height ** 3 * self.bottom_flange.width +
+                self.web_plate.width ** 2 * self.web_plate.height) / 3.0
 
     @property
-    def rx(self):
+    def rx(self) -> float:
         """
         Radius of gyration about x-axis
         """
         return math.sqrt(self.ix / self.area)
 
     @property
-    def ry(self):
+    def ry(self) -> float:
         """
         Radius of gyration about y-axis
         """
