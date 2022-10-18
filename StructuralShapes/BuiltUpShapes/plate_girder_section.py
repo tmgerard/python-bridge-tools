@@ -48,9 +48,9 @@ class PlateGirderSection:
         Warping constant
         """
         # See Roark's Formulas for Stress and Strain Table 10.2
-        h = self.web_plate.height
+        h = self.depth - 0.5 * (self.top_flange.height + self.bottom_flange.height)
         t1 = self.top_flange.height
-        b1 = self.bottom_flange.width
+        b1 = self.top_flange.width
         t2 = self.bottom_flange.height
         b2 = self.bottom_flange.width
 
@@ -67,11 +67,11 @@ class PlateGirderSection:
         Moment of inertia about the x-axis
         """
         # transform top flange moment of inertia about plate girder centroid
-        top_d = self.depth - 0.5 * self.top_flange.height - self.base_to_centroid
+        top_d = (self.depth - self.base_to_centroid) -  0.5 * self.top_flange.height
         top_ix = self.__parallel_axis_theorem(self.top_flange.ix, self.top_flange.area, top_d)
 
         # transform web plate moment of inertia about plate girder centroid
-        web_d = self.base_to_centroid - 0.5 * self.web_plate.height
+        web_d = math.fabs(self.base_to_centroid - (0.5 * self.web_plate.height + self.bottom_flange.height))
         web_ix = self.__parallel_axis_theorem(self.web_plate.ix, self.web_plate.area, web_d)
 
         # transform bottom flange moment of inertia about plate girder centroid
