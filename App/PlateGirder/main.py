@@ -19,7 +19,7 @@ def get_plate_girder_input() -> PlateGirderSection:
 
 
 def plate_girder_properties():
-    print('Enter plate girder dimensions (inches)')
+    print('Enter plate girder dimensions (inches)\n')
     girder_section = get_plate_girder_input()
     plate_girder_report(girder_section)
     input('\nPress enter to exit')
@@ -28,13 +28,13 @@ def plate_girder_properties():
 def plate_girder_report(girder_section: PlateGirderSection):
     print('\n-------[Properties]-------')
     print('Girder Depth: {0} in.'.format(girder_section.depth))
-    print('Area: {0} in^2'.format(girder_section.area))
-    print('Ix: {0} in^4'.format(girder_section.ix))
-    print('Iy: {0} in^4'.format(girder_section.iy))
-    print('J: {0} in^4'.format(girder_section.j))
-    print('Cw: {0} in^6'.format(girder_section.cw))
-    print('Rx: {0} in.'.format(girder_section.rx))
-    print('Ry: {0} in.'.format(girder_section.ry))
-    print('Base to Neutral Axis: {0} in.'.format(girder_section.base_to_centroid))
+    print('Area: {0:.4f} in^2'.format(girder_section.area))
+    print('Ix: {0:.4f} in^4'.format(girder_section.ix))
+    print('Iy: {0:.4f} in^4'.format(girder_section.iy))
+    print('J: {0:.4f} in^4'.format(girder_section.j))
+    print('Cw: {0:.4f} in^6'.format(girder_section.cw))
+    print('Rx: {0:.4f} in.'.format(girder_section.rx))
+    print('Ry: {0:.4f} in.'.format(girder_section.ry))
+    print('Base to Neutral Axis: {0:.4f} in.'.format(girder_section.base_to_centroid))
 
 
