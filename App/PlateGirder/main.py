@@ -21,10 +21,12 @@ def get_plate_girder_input() -> PlateGirderSection:
 def plate_girder_properties():
     print('Enter plate girder dimensions (inches)')
     girder_section = get_plate_girder_input()
+    plate_girder_report(girder_section)
+    input('\nPress enter to exit')
 
 
 def plate_girder_report(girder_section: PlateGirderSection):
-    print('\nProperties\n')
+    print('\n-------[Properties]-------')
     print('Girder Depth: {0} in.'.format(girder_section.depth))
     print('Area: {0} in^2'.format(girder_section.area))
     print('Ix: {0} in^4'.format(girder_section.ix))
