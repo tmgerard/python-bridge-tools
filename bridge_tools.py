@@ -7,6 +7,7 @@ from App.PlateGirder.main import plate_girder_properties
 
 
 def program_welcome():
+    clear_console()
     print('Bridge Tools')
 
 
