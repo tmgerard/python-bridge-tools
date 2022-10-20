@@ -3,6 +3,7 @@ import os
 
 from App.BridgeGrades.main import bridge_grade_main
 from App.SeismicData.main import seismic_data_main
+from App.PlateGirder.main import plate_girder_properties
 
 
 def program_welcome():
@@ -17,6 +18,7 @@ def main_loop():
             print()
             print('1. Calculate Bridge Grades')
             print('2. Retrieve Design Response Spectra')
+            print('3. Calculate Plate Girder Section Properties')
             print()
             print('Type \'q\' to exit the program')
             user_input = input('>> ')
@@ -33,8 +35,12 @@ def handle_user_input(user_input):
         clear_console()
         seismic_data_main()
         clear_console()
+    elif user_input == '3':
+        clear_console()
+        plate_girder_properties()
+        clear_console()
     elif user_input == 'q':
-        pass
+        clear_console()
     else:
         print('\nPlease select a valid option or type \'q\' to exit\n')
 
