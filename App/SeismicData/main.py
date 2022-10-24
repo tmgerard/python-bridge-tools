@@ -54,3 +54,4 @@ def seismic_data_console_report(data: GroundMotionDataAASHTO2009):
     print('Query URL: {0}'.format(data.url_request))
     print('PGA: {0}'.format(data.peak_ground_acceleration))
     print('SD1: {0}'.format(data.design_one_second_spectral_acceleration))
+    print('Seismic Design Category {0}'.format(data.seismic_design_category.upper()))
