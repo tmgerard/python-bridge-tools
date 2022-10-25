@@ -1,6 +1,7 @@
 import math
 
 from Geometry.point2D import Point2D
+from Geometry.polygon2D import Polygon2D
 from Geometry.num_compare import effectively_equal
 
 
@@ -74,6 +75,19 @@ class Rectangle2D:
         Returns the y-coordinate of the rectangle's top edge
         """
         return self.origin.y + self.height
+
+    def to_polygon(self) -> Polygon2D:
+        """
+        Returns polygon representing rectangle 2D
+        """
+        return Polygon2D(
+            [
+                self.origin,
+                Point2D(self.bottom, self.right),
+                Point2D(self.top, self.right),
+                Point2D(self.top, self.left)
+            ]
+        )
 
     def __eq__(self, other):
         if self is other:
