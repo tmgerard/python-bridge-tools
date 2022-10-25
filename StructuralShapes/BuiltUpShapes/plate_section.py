@@ -1,4 +1,4 @@
-from StructuralShapes.Shapes.rectangle import Rectangle2D
+from Geometry.rectangle2D import Rectangle2D
 
 
 class PlateSection(Rectangle2D):
