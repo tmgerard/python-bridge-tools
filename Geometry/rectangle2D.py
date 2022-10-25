@@ -31,7 +31,7 @@ class Rectangle2D:
     @property
     def bottom(self) -> float:
         """
-        Returns y-coordinate of the rectangle's bottom bottom edge
+        Returns y-coordinate of the rectangle's bottom edge
         """
         return self.origin.y
 
