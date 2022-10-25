@@ -86,7 +86,7 @@ class Segment2D:
         Returns Point2D corresponding to a location on the line segment given as a ratio of the segment length
         :param ratio: A value from 0.0 to 1.0 that represents the length along the line segment as a ratio
         """
-        if self.__check_ratio(ratio):
+        if not self.__check_ratio(ratio):
             raise ValueError('Length ratio for segment must be from 0.0 to 1.0')
 
         return self.start.displaced(self.direction_vector, ratio)
