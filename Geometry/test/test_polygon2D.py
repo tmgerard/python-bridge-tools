@@ -30,6 +30,10 @@ class TestPolygon2D(unittest.TestCase):
         point = Point2D(10, 10)
         self.assertTrue(self.poly1.contains_point(point))
 
+    def test_contains_point_false(self):
+        point = Point2D(10, 50)
+        self.assertFalse(self.poly1.contains_point(point))
+
 
 if __name__ == '__main__':
     unittest.main()
