@@ -1,5 +1,5 @@
-from point2D import Point2D
-from vector2D import Vector2D
+from Geometry.point2D import Point2D
+from Geometry.vector2D import Vector2D
 
 
 class Segment2D:
