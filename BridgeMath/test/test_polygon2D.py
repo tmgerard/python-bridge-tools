@@ -1,8 +1,8 @@
 import unittest
 
 
-from Geometry.point2D import Point2D
-from Geometry.polygon2D import Polygon2D
+from BridgeMath.Geometry.point2D import Point2D
+from BridgeMath.Geometry.polygon2D import Polygon2D
 
 
 class TestPolygon2D(unittest.TestCase):

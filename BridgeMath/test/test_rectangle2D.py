@@ -1,8 +1,8 @@
 import unittest
 
 
-from Geometry.rectangle2D import Rectangle2D
-from Geometry.point2D import Point2D
+from BridgeMath.Geometry.rectangle2D import Rectangle2D
+from BridgeMath.Geometry.point2D import Point2D
 
 
 class TestRectangle2D(unittest.TestCase):

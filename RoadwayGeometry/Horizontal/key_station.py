@@ -1,4 +1,4 @@
-from Geometry.num_compare import effectively_equal
+from BridgeMath.num_compare import effectively_equal
 
 
 class KeyStation:

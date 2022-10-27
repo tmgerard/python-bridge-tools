@@ -1,6 +1,6 @@
 import math
 
-from Geometry.num_compare import effectively_one, effectively_equal, effectively_zero
+from BridgeMath.num_compare import effectively_one, effectively_equal, effectively_zero
 
 
 class Vector2D:

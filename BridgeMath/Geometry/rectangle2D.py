@@ -1,8 +1,8 @@
 import math
 
-from Geometry.point2D import Point2D
-from Geometry.polygon2D import Polygon2D
-from Geometry.num_compare import effectively_equal
+from BridgeMath.Geometry.point2D import Point2D
+from BridgeMath.Geometry.polygon2D import Polygon2D
+from BridgeMath.num_compare import effectively_equal
 
 
 class Rectangle2D:

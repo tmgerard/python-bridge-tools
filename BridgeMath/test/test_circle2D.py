@@ -2,9 +2,8 @@ import unittest
 import math
 
 
-from Geometry.circle2D import Circle2D
-from Geometry.point2D import Point2D
-from Geometry.polygon2D import Polygon2D
+from BridgeMath.Geometry.circle2D import Circle2D
+from BridgeMath.Geometry.point2D import Point2D
 
 
 class TestCircle2D(unittest.TestCase):

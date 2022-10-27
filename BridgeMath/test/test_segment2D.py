@@ -1,7 +1,7 @@
 import unittest
 
-from Geometry.point2D import Point2D
-from Geometry.segment2D import Segment2D
+from BridgeMath.Geometry.point2D import Point2D
+from BridgeMath.Geometry.segment2D import Segment2D
 
 
 class MyTestCase(unittest.TestCase):

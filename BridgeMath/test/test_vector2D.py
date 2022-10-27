@@ -1,7 +1,7 @@
 import math
 import unittest
 
-from Geometry import Vector2D
+from BridgeMath import Vector2D
 
 
 class TestVector2D(unittest.TestCase):

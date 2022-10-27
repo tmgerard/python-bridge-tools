@@ -2,7 +2,7 @@ import math
 
 from RoadwayGeometry.Angles import DirectionAngle
 from RoadwayGeometry.Horizontal.curve_direction import CurveDirection
-from Geometry.num_compare import effectively_equal
+from BridgeMath.num_compare import effectively_equal
 
 
 class CircularHorizontalCurve:

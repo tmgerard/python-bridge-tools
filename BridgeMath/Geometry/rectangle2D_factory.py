@@ -1,8 +1,8 @@
 from typing import List
 
 
-from Geometry.rectangle2D import Rectangle2D
-from Geometry.point2D import Point2D
+from BridgeMath.Geometry.rectangle2D import Rectangle2D
+from BridgeMath.Geometry.point2D import Point2D
 
 
 def make_rectangle2d_containing(points: List[Point2D]) -> Rectangle2D:
