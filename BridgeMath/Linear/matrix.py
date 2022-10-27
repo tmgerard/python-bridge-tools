@@ -34,6 +34,17 @@ class Matrix:
         """
         return self.__row_count
 
+    def scale(self, factor: float) -> 'Matrix':
+        """
+        Multiply all matrix elements by a given factor
+        """
+        mat = Matrix(self.row_count, self.column_count)
+        for row_index in range(mat.row_count):
+            for column_index in range(mat.column_count):
+                mat.set_value(row_index, column_index, factor * self.value_at(row_index, column_index))
+
+        return mat
+
     def set_value(self, row_index: int, column_index: int, value):
         """
         Sets a value in the matrix at the given row/column address
