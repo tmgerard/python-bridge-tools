@@ -40,6 +40,15 @@ class TestMatrix(unittest.TestCase):
         actual = self.a + self.b
         self.assertEqual(expected, actual)
 
+    def test_scale(self):
+        expected = Matrix(2, 2)
+        for i in range(2):
+            for j in range(2):
+                expected.set_value(i, j, 3)
+
+        actual = self.a.scale(3)
+        self.assertEqual(expected, actual)
+
     def test_subtract(self):
         expected = Matrix(2, 2)
         for i in range(2):
