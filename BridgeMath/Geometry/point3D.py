@@ -8,7 +8,7 @@ class Point3D:
     Defines a three-dimensional cartesian coordinate point
     """
 
-    def __int__(self, x, y, z):
+    def __init__(self, x, y, z):
         self.x = x
         self.y = y
         self.z = z
