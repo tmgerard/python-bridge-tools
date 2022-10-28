@@ -12,7 +12,7 @@ class Point2D:
         self.x = x
         self.y = y
 
-    def displaced(self, vector: Vector2D, times=1):
+    def displaced(self, vector: Vector2D, times=1) -> 'Point2D':
         """
         Returns Point2D that is the current point displaced by a given Vector2D a specified number of times
         :param vector: Vector to displace point by
@@ -25,7 +25,7 @@ class Point2D:
             self.y + scaled_vec.v
         )
 
-    def distance_to(self, other):
+    def distance_to(self, other: 'Point2D') -> float:
         """
         Calculates the distance to a given Point2D
         :param other: Point2D to calculate distance to
@@ -35,7 +35,7 @@ class Point2D:
         delta_y = other.y - self.y
         return math.sqrt(delta_x ** 2 + delta_y ** 2)
 
-    def __sub__(self, other):
+    def __sub__(self, other: 'Point2D') -> Vector2D:
         return Vector2D(
             self.x - other.x,
             self.y - other.y
