@@ -1,6 +1,6 @@
 import math
 
-from BridgeMath.Linear.vector2D import Vector2D
+from BridgeMath.Geometry.vector2D import Vector2D
 from BridgeMath.num_compare import  effectively_equal
 
 
