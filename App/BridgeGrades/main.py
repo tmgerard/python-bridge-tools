@@ -29,11 +29,11 @@ def bridge_grade_main():
         save_to_file(reporter)
 
     except ValueError as e:
-        print(e.args[1])
+        print(e.args[0])
         time.sleep(1.5)
 
     except FileNotFoundError as e:
-        print(e.args[1])
+        print(e.args[0])
         time.sleep(1.5)
 
 

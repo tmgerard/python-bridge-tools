@@ -33,7 +33,7 @@ def seismic_data_main():
             user_input = input('>> ')
             handle_user_input(user_input, data)
     except ValueError as e:
-        print(e.args[1])
+        print(e.args[0])
 
 
 def handle_user_input(user_input: string, data: GroundMotionDataAASHTO2009):
