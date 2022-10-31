@@ -1,10 +1,9 @@
 import string
-from datetime import date
 
 from Seismic.ResponseSpectra.ground_motion_data_aashto2009 import GroundMotionDataAASHTO2009
 from Seismic.ResponseSpectra.ground_motion_data_getter_aashto2009 import GroundMotionDataGetterAASHTO2009
 from Seismic.ResponseSpectra.design_response_spectrum_plotter_aashto2009 import DesignSpectrumPlotterAASHTO2009
-from Seismic.config_reader import read_config
+from Config.config_reader import read_config
 
 
 CONFIG_FILE = 'seismic_config.json'
