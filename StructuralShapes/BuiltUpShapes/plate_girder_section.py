@@ -67,7 +67,7 @@ class PlateGirderSection:
         Moment of inertia about the x-axis
         """
         # transform top flange moment of inertia about plate girder centroid
-        top_d = (self.depth - self.base_to_centroid) -  0.5 * self.top_flange.height
+        top_d = (self.depth - self.base_to_centroid) - 0.5 * self.top_flange.height
         top_ix = self.__parallel_axis_theorem(self.top_flange.ix, self.top_flange.area, top_d)
 
         # transform web plate moment of inertia about plate girder centroid
