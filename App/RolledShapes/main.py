@@ -15,4 +15,4 @@ def get_rolled_shape():
 
         input('\nPress \'Enter\' to close')
     except ValueError as e:
-        print(e.args[1])
+        print(e.args[0])
