@@ -6,14 +6,14 @@ from StructuralShapes.RolledShapes.csv_rolled_shape_getter import CSVRolledShape
 from Config.config_reader import read_config
 
 
-CONFIG_FILE = '../../Config/rolled_shape_config.json'
+CONFIG_FILE = 'rolled_shape_config.json'
 
 
 def create_rolled_shape(shape_name: str):
     """
     Creates a rolled shape object based on data from the AISC Rolled Shapes Database
     """
-    file_name = read_config(CONFIG_FILE)['RolledShapes']['CSV_File_Path']
+    file_name = read_config(CONFIG_FILE)['RolledShapes']['CSV_File_Name']
     file_path = os.path.join(os.path.dirname(__file__), file_name)
     getter = CSVRolledShapeGetterAISC15(file_path)
 

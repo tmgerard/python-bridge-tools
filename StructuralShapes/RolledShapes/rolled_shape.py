@@ -1,6 +1,3 @@
-from typing import Dict
-
-
 # AISC Shapes Database v15.0 property key names
 AISC_TYPE = 'Type'
 AISC_EDI_STD_NOMENCLATURE = 'EDI_Std_Nomenclature'
@@ -47,7 +44,7 @@ class RolledShape:
     Defines elements common to all rolled shapes found in the AISC Steel Construction Manual. Base class to other
     rolled shapes (W, WT, HP, C, MC, L, etc).
     """
-    def __init__(self, properties: Dict):
+    def __init__(self, properties: dict):
         self.__properties = properties
 
     @property
@@ -106,6 +103,13 @@ class RolledShape:
         Nominal weight, lb/ft
         """
         return self.__properties[AISC_NOMINAL_WEIGHT]
+
+    @property
+    def properties(self) -> dict:
+        """
+        Returns the dictionary with all properties found in the AISC Shapes Database
+        """
+        return self.__properties
 
     @property
     def rx(self) -> float:

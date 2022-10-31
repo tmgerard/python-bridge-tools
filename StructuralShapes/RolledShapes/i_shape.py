@@ -5,7 +5,7 @@ class IShape(RolledShape):
     """
     Defines rolled I-shape cross-section (W, M, S, HP)
     """
-    def __init__(self, properties: Dict):
+    def __init__(self, properties: dict):
         super().__init__(properties)
 
     @property
