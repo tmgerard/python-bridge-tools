@@ -1,5 +1,5 @@
 {
   "RolledShapes":{
-    "CSV_File_Path": "../StructuralShapes/RolledShapes/aisc-shapes-database-v15.0.csv"
+    "CSV_File_Path": "StructuralShapes\\RolledShapes\\aisc-shapes-database-v15.0.csv"
   }
 }
