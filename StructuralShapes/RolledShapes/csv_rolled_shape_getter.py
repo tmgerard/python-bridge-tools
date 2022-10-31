@@ -7,6 +7,7 @@ class CSVRolledShapeGetterAISC15:
     """
     Retrieves AISC Steel Construction Manual, 15th Edition rolled shape data from CSV formatted file
     """
+
     def __init__(self, file_path: str):
         self.__file_path = file_path
 
@@ -24,18 +25,17 @@ class CSVRolledShapeGetterAISC15:
         data = []
 
         with open(self.__file_path, 'r') as f:
-            while True:
-                line = f.readline()
+            for line in f:
                 split = line.split(csv_separator)
-                if split[0] == AISC_TYPE:   # header row
+                if split[0] == AISC_TYPE:  # header row
                     header = split
-                else:   # data row
-                    if shape_name in split:
+                else:  # data row
+                    if shape_name == split[1]:
                         data = split
                         break
 
         if not data:
-            ValueError('The requested shape was not found in the AISC Shapes Database')
+            raise ValueError('The requested shape was not found in the AISC Shapes Database')
 
         properties = self.__build_properties_dictionary(data, header)
 
