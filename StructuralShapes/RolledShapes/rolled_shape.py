@@ -1,13 +1,32 @@
 from typing import Dict
 
 
-# AISC Shapes Database v15.0 property key names common to all rolled shapes
+# AISC Shapes Database v15.0 property key names
 AISC_TYPE = 'Type'
 AISC_EDI_STD_NOMENCLATURE = 'EDI_Std_Nomenclature'
 AISC_MANUAL_LABEL = 'AISC_Manual_Label'
 AISC_T_F = 'T_F'
 AISC_NOMINAL_WEIGHT = 'W'
 AISC_AREA = 'A'
+AISC_DEPTH = 'd'
+AISC_DETAILING_DEPTH = 'ddet'
+AISC_FLANGE_WIDTH = 'bf'
+AISC_DETAILING_FLANGE_WIDTH = 'bfdet'
+AISC_WEB_THICKNESS = 'tw'
+AISC_DETAILING_WEB_THICKNESS = 'twdet'
+AISC_FLANGE_THICKNESS = 'tf'
+AISC_DETAILING_FLANGE_THICKNESS = 'tfdet'
+AISC_ANGLE_LEG_THICKNESS = 't'
+AISC_NOMINAL_WALL_THICKNESS = 'tnom'
+AISC_DESIGN_WALL_THICKNESS = 'tdes'
+AISC_K_DESIGN = 'kdes'
+AISC_K_DETAILING = 'kdet'
+AISC_K1 = 'k1'
+AISC_TO_CENTROID_X = 'x'
+AISC_TO_CENTROID_Y = 'y'
+AISC_TO_SHEAR_CENTER = 'eo'
+AISC_TO_PLASTIC_NUETRAL_AXIS_X = 'xp'
+AISC_TO_PLASTIC_NUETRAL_AXIS_Y = 'yp'
 AISC_IX = 'Ix'
 AISC_ZX = 'Zx'
 AISC_SX = 'Sx'
@@ -16,6 +35,11 @@ AISC_IY = 'Iy'
 AISC_ZY = 'Zy'
 AISC_SY = 'Sy'
 AISC_RY = 'ry'
+AISC_IZ = 'Iz'
+AISC_SZ = 'Sz'
+AISC_RZ = 'rz'
+AISC_J = 'J'
+AISC_CW = 'Cw'
 
 
 class RolledShape:
