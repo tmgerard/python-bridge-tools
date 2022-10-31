@@ -8,6 +8,14 @@ AISC_MANUAL_LABEL = 'AISC_Manual_Label'
 AISC_T_F = 'T_F'
 AISC_NOMINAL_WEIGHT = 'W'
 AISC_AREA = 'A'
+AISC_IX = 'Ix'
+AISC_ZX = 'Zx'
+AISC_SX = 'Sx'
+AISC_RX = 'rx'
+AISC_IY = 'Iy'
+AISC_ZY = 'Zy'
+AISC_SY = 'Sy'
+AISC_RY = 'ry'
 
 
 class RolledShape:
@@ -19,11 +27,18 @@ class RolledShape:
         self.__properties = properties
 
     @property
-    def type(self) -> str:
+    def aisc_manual_label(self) -> str:
         """
-        Shape Type: W, M, S, HP, C, MC, L, WT, MT, ST, 2L, HSS, or PIPE
+        The shape designation as seen in the AISC Steel Construction Manual
         """
-        return self.__properties[AISC_TYPE]
+        return self.__properties[AISC_MANUAL_LABEL]
+
+    @property
+    def area(self) -> float:
+        """
+        Cross-sectional area, in^2
+        """
+        return self.__properties[AISC_AREA]
 
     @property
     def edi_std_nomenclature(self) -> str:
@@ -32,13 +47,6 @@ class RolledShape:
         Electronic Data Interchange (EDI)
         """
         return self.__properties[AISC_EDI_STD_NOMENCLATURE]
-
-    @property
-    def aisc_manual_label(self) -> str:
-        """
-        The shape designation as seen in the AISC Steel Construction Manual
-        """
-        return self.__properties[AISC_MANUAL_LABEL]
 
     @property
     def has_special_note(self) -> str:
@@ -55,6 +63,20 @@ class RolledShape:
         return self.__properties[AISC_T_F]
 
     @property
+    def ix(self) -> float:
+        """
+        Moment of inertia about the x-axis as defined in the AISC Steel Construction Manual, in^4
+        """
+        return self.__properties[AISC_IX]
+
+    @property
+    def iy(self) -> float:
+        """
+        Moment of inertia about the y-axis as defined in the AISC Steel Construction Manual, in^4
+        """
+        return self.__properties[AISC_IY]
+
+    @property
     def nominal_weight(self) -> float:
         """
         Nominal weight, lb/ft
@@ -62,8 +84,50 @@ class RolledShape:
         return self.__properties[AISC_NOMINAL_WEIGHT]
 
     @property
-    def area(self) -> float:
+    def rx(self) -> float:
         """
-        Cross-sectional area, in^2
+        Radius of gyration about the x-axis as defined in the AISC Steel Construction Manual, in.
         """
-        return self.__properties[AISC_AREA]
+        return self.__properties[AISC_RX]
+
+    @property
+    def ry(self) -> float:
+        """
+        Radius of gyration about the y-axis as defined in the AISC Steel Construction Manual, in.
+        """
+        return self.__properties[AISC_RY]
+
+    @property
+    def sx(self):
+        """
+        Elastic section modulus about the x-axis as defined in the AISC Steel Construction Manual, in^3
+        """
+        return self.__properties[AISC_SX]
+
+    @property
+    def sy(self):
+        """
+        Elastic section modulus about the y-axis as defined in the AISC Steel Construction Manual, in^3
+        """
+        return self.__properties[AISC_SY]
+
+    @property
+    def type(self) -> str:
+        """
+        Shape Type: W, M, S, HP, C, MC, L, WT, MT, ST, 2L, HSS, or PIPE
+        """
+        return self.__properties[AISC_TYPE]
+
+    @property
+    def zx(self):
+        """
+        Plastic section modulus about the x-axis as defined in the AISC Steel Construction Manual, in^3
+        """
+        return self.__properties[AISC_ZX]
+
+    @property
+    def zy(self):
+        """
+        Plastic section modulus about the y-axis as defined in the AISC Steel Construction Manual, in^3
+        """
+        return self.__properties[AISC_ZY]
