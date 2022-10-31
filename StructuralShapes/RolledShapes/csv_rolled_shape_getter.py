@@ -42,11 +42,10 @@ class CSVRolledShapeGetterAISC15:
         return properties
 
     def __build_properties_dictionary(self, data, header) -> Dict:
-        csv_no_data = '-'
         properties = {}
 
         for i in range(len(data)):
-            if not data[i] == csv_no_data:
+            if not data[i].strip() == '':
                 # Most values in table should be floats, but there are a few that should be strings
                 if header[i] == AISC_TYPE or \
                         header[i] == AISC_EDI_STD_NOMENCLATURE or \
