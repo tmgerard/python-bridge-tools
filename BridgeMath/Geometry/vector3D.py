@@ -1,6 +1,5 @@
 import math
 
-
 from BridgeMath.num_compare import effectively_equal, effectively_one
 
 
@@ -8,6 +7,7 @@ class Vector3D:
     """
     Defines a vector in three-dimensional space
     """
+
     def __init__(self, u, v, w):
         self.u = u
         self.v = v
@@ -15,7 +15,7 @@ class Vector3D:
 
     def cross(self, other: 'Vector3D') -> 'Vector3D':
         """
-        Calculates the cross product between to vectors.
+        Calculates the cross product between to vectors
         :param other: Vector3D
         :return: Vector3D that is perpendicular to self and other vector
         """
@@ -109,5 +109,5 @@ class Vector3D:
             return False
 
         return effectively_equal(self.u, other.u) and \
-               effectively_equal(self.v, other.v) and \
-               effectively_equal(self.w, other.w)
+            effectively_equal(self.v, other.v) and \
+            effectively_equal(self.w, other.w)
