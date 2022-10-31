@@ -4,6 +4,7 @@ import os
 from App.BridgeGrades.main import bridge_grade_main
 from App.SeismicData.main import seismic_data_main
 from App.PlateGirder.main import plate_girder_properties
+from App.RolledShapes.main import get_rolled_shape
 
 
 def program_welcome():
@@ -20,6 +21,7 @@ def main_loop():
             print('1. Calculate Bridge Grades')
             print('2. Retrieve Design Response Spectra')
             print('3. Calculate Plate Girder Section Properties')
+            print('4. Retrieve Rolled Shape Section Properties')
             print()
             print('Type \'q\' to exit the program')
             user_input = input('>> ')
@@ -40,6 +42,9 @@ def handle_user_input(user_input):
         clear_console()
         plate_girder_properties()
         clear_console()
+    elif user_input == '4':
+        clear_console()
+        get_rolled_shape()
     elif user_input == 'q':
         clear_console()
     else:
