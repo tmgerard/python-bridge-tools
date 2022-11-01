@@ -25,15 +25,15 @@ def create_rolled_shape(shape_name: str):
 
 def __create_shape_object(shape_name: str, getter: CSVRolledShapeGetterAISC15):
     data = getter.get_data(shape_name)
-    type = data[AISC_TYPE]
+    shape_type = data[AISC_TYPE]
 
-    if type == 'W' or type == 'M' or type == 'S' or type == 'HP':  # I-Shape Section
+    if shape_type == 'W' or shape_type == 'M' or shape_type == 'S' or shape_type == 'HP':  # I-Shape Section
         return IShape(data)
-    elif type == 'C' or type == 'MC':  # Channel Shape
+    elif shape_type == 'C' or shape_type == 'MC':  # Channel Shape
         return ChannelShape(data)
-    elif type == 'L':  # Single angle shape
+    elif shape_type == 'L':  # Single angle shape
         return LShape(data)
-    elif type == 'WT' or type == 'MT' or type == 'ST':  # T-Shape Section
+    elif shape_type == 'WT' or shape_type == 'MT' or shape_type == 'ST':  # T-Shape Section
         return TShape(data)
     else:
         return RolledShape(data)
