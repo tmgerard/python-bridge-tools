@@ -8,6 +8,13 @@ class LShape(RolledShape):
         super().__init__(properties)
 
     @property
+    def cw(self) -> float:
+        """
+        Warping constant, in^6
+        """
+        return self.properties[AISC_CW]
+
+    @property
     def detailing_k(self) -> float:
         """
         Detailing distance from outer face of flange to web toe of fillet, in.
@@ -27,6 +34,13 @@ class LShape(RolledShape):
         Moment of inertia about the z-axis as defined in the AISC Steel Construction Manual, in.
         """
         return self.properties[AISC_IZ]
+
+    @property
+    def j(self) -> float:
+        """
+        Torsional moment of inertia, in^4
+        """
+        return self.properties[AISC_J]
 
     @property
     def k_design(self) -> float:
