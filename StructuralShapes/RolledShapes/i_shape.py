@@ -30,6 +30,13 @@ class IShape(RolledShape):
         return self.__properties[AISC_DETAILING_DEPTH]
 
     @property
+    def detailing_flange_thickness(self):
+        """
+        Detailing flange thickness, in.
+        """
+        return self.__properties[AISC_DETAILING_FLANGE_THICKNESS]
+
+    @property
     def detailing_flange_width(self):
         """
         Detailing flange width, in.
