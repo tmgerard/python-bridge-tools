@@ -2,6 +2,8 @@ import os
 
 from StructuralShapes.RolledShapes.rolled_shape import *
 from StructuralShapes.RolledShapes.i_shape import IShape
+from StructuralShapes.RolledShapes.channel_shape import ChannelShape
+from StructuralShapes.RolledShapes.single_angle import LShape
 from StructuralShapes.RolledShapes.csv_rolled_shape_getter import CSVRolledShapeGetterAISC15
 from Config.config_reader import read_config
 
@@ -26,5 +28,9 @@ def __create_shape_object(shape_name: str, getter: CSVRolledShapeGetterAISC15):
 
     if type == 'W' or type == 'M' or type == 'S' or type == 'HP':  # I-Shape Section
         return IShape(data)
+    if type == 'C' or type == 'MC':  # Channel Shape
+        return ChannelShape(data)
+    if type == 'L':  # Single angle shape
+        return LShape(data)
     else:
         return RolledShape(data)
