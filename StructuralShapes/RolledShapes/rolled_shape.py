@@ -6,6 +6,7 @@ AISC_T_F = 'T_F'
 AISC_NOMINAL_WEIGHT = 'W'
 AISC_AREA = 'A'
 AISC_DEPTH = 'd'
+AISC_LONG_LEG_WIDTH = 'b'
 AISC_DETAILING_DEPTH = 'ddet'
 AISC_FLANGE_WIDTH = 'bf'
 AISC_DETAILING_FLANGE_WIDTH = 'bfdet'
@@ -37,6 +38,8 @@ AISC_SZ = 'Sz'
 AISC_RZ = 'rz'
 AISC_J = 'J'
 AISC_CW = 'Cw'
+AISC_POLAR_RADIUS_OF_GYRATION = 'ro'
+AISC_IW = 'Iw'
 
 
 class RolledShape:
