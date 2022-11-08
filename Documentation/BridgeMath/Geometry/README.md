@@ -304,7 +304,7 @@ new_vector = vector1 - vector2  # Vector with u=-7.0 and v=4.0
 
 ### \_\_eq\_\_(other: Vector2D)
 
-Tests for equality between two Vector2 objects. True if u and v values are equal. False otherwise.
+Tests for equality between two Vector2D objects. True if u and v values are equal. False otherwise.
 
 ```python
 from BridgeMath import Vector2D
