@@ -75,6 +75,8 @@ print(point1 == point2)  # Prints False to console
 
 # Vector2D
 
+The Vector2D class represents a two-dimensional vector with u and v components representing displacement in the x and y directions. 
+
 ## Initializer
 
 The Vector initializer requires u and v component values, representing vector displacement in the x and y directions, to construct the object
@@ -313,4 +315,119 @@ vector1 = Vector2D(3.0, 4.0)
 vector2 = Vector2D(1.0, 0.0)
 
 print(vector1 == vector2)  # Prints False to console
+```
+
+# Polygon2D
+
+The Polygon2D class represents a normal polygon shape define with three or more coordinate points. Polygons should not have any crossing sides. There are currently no checks to validate if the polygon meets these criteria.
+
+## Initializer
+
+The polygon initializer requires a list of Point2D objects to construct the Polygon2D object
+
+### Polygon2D(vertices: List\[Point2D\])
+
+```python
+from BridgeMath import Polygon2D, Point2D
+
+polygon = Polygon2D(
+  [
+    Point2D(0.0, 0.0), 
+    Point2D(10.0, 0.0), 
+    Point2D(12.0, 5.0),  
+    Point2D(3.0, 2.0)
+  ]
+)
+```
+
+## Methods
+
+### contains_point(point: Point2D)
+
+Checks if a given point lies within the polygon. True if point is within polygon. False otherwise.
+
+```python
+from BridgeMath import Polygon2D, Point2D
+
+polygon = Polygon2D(
+  [
+    Point2D(0.0, 0.0), 
+    Point2D(10.0, 0.0), 
+    Point2D(12.0, 5.0),  
+    Point2D(3.0, 2.0)
+  ]
+)
+
+point = Point2D(4.0, 2.0)
+
+print(polygon.contains_point(point))  # True
+```
+
+## Properties
+
+### area
+
+Returns the area of the polygon
+
+```python
+from BridgeMath import Polygon2D, Point2D
+
+polygon = Polygon2D(
+  [
+    Point2D(0.0, 0.0), 
+    Point2D(10.0, 0.0), 
+    Point2D(12.0, 5.0),  
+    Point2D(3.0, 2.0)
+  ]
+)
+
+area = polygon.area  # 29.5
+```
+
+### centroid
+
+Returns a Point2D object representing the centroid of the polygon area
+
+```python
+from BridgeMath import Polygon2D, Point2D
+
+polygon = Polygon2D(
+  [
+    Point2D(0.0, 0.0), 
+    Point2D(10.0, 0.0), 
+    Point2D(12.0, 5.0),  
+    Point2D(3.0, 2.0)
+  ]
+)
+
+centroid = polygon.centroid  # Point2D x=6.25 and y=1.75
+```
+
+## Overrides
+
+### \_\_eq\_\_(other)
+
+Checks if a given polygon is equivalent to the current polygon object. True if the vertex list is equivalent for both polygons.
+
+```python
+from BridgeMath import Polygon2D, Point2D
+
+polygon1 = Polygon2D(
+  [
+    Point2D(0.0, 0.0), 
+    Point2D(10.0, 0.0), 
+    Point2D(12.0, 5.0),  
+    Point2D(3.0, 2.0)
+  ]
+)
+
+polygon2 = Polygon2D(
+  [
+    Point2D(0.0, 0.0),
+    Point2D(5.0, 5.0),
+    Point2D(3.0, 10.0)
+  ]
+)
+
+print(polygon1 == polygon2)  # Prints False to console
 ```
