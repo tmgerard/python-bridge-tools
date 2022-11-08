@@ -431,3 +431,22 @@ polygon2 = Polygon2D(
 
 print(polygon1 == polygon2)  # Prints False to console
 ```
+
+# Rectangle2D
+
+Represents a rectangle with a given width, height, and origin point. The origin point is a Point2D that identifies the lower left corner of the rectangle.
+
+## Initializer
+
+The Rectangle2D initializer requires a width, height, and Point2D to initialize the object. The origin is an optional parameter and will default to a point with x and y both equal to zero.
+
+### Rectangle2D(width: float, height: float, origin=Point2D(0, 0))
+
+```python
+from BridgeMath import Rectangle2D, Point2D
+
+rectangle1 = Rectangle2D(6.0, 2.0, Point2D(1.0, 1.0))  # Defining origin point
+rectangle2 = Rectangle2D(6.0, 2.0)  # Default origin x=0.0 and y=0.0
+```
+
+
