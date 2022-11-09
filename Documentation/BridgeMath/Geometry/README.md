@@ -4,6 +4,7 @@
 - Two-Dimensional Geometry
   - [Point2D](#point2d)
   - [Vector2D](#vector2d)
+  - [Rectangle2D](#rectangle2d)
 
 # Point2D
 
@@ -449,4 +450,129 @@ rectangle1 = Rectangle2D(6.0, 2.0, Point2D(1.0, 1.0))  # Defining origin point
 rectangle2 = Rectangle2D(6.0, 2.0)  # Default origin x=0.0 and y=0.0
 ```
 
+## Methods
 
+### contains_point(point: Point2D)
+
+Checks if a given point lies within the rectangle. True if point is within rectangle. False otherwise.
+
+```python
+from BridgeMath import Rectangle2D, Point2D
+
+rectangle = Rectangle2D(6.0, 2.0, Point2D(1.0, 1.0))
+
+print(rectangle.contains_point(Point2D(2.0, 2.0)))  # Prints True to console
+```
+
+### to_polygon
+
+Returns Polygon2D representing the rectangle
+
+```python
+from BridgeMath import Rectangle2D, Point2D, Polygon2D
+
+rectangle = Rectangle2D(6.0, 2.0, Point2D(1.0, 1.0))
+
+rect_polygon = rectangle.to_polygon()  # Polygon2D with four vertices
+```
+
+## Properties
+
+### area
+
+Returns the area of the rectangle
+
+```python
+from BridgeMath import Rectangle2D, Point2D
+
+rectangle = Rectangle2D(6.0, 2.0, Point2D(1.0, 1.0))
+
+area = rectangle.area  # 12.0
+```
+
+### bottom
+
+Returns y-coordinate of the rectangles bottom edge
+
+```python
+from BridgeMath import Rectangle2D, Point2D
+
+rectangle = Rectangle2D(6.0, 2.0, Point2D(1.0, 1.0))
+
+bottom = rectangle.bottom  # 1.0
+```
+
+### diagonal_length
+
+Returns the distance from one bottom corner to the opposing top corner of the rectangle.
+
+```python
+from BridgeMath import Rectangle2D, Point2D
+
+rectangle = Rectangle2D(6.0, 2.0, Point2D(1.0, 1.0))
+
+diagonal_length = rectangle.diagonal_length  # 6.32455...
+```
+
+### left
+
+Returns x-coordinate of the rectangle's left edge
+
+```python
+from BridgeMath import Rectangle2D, Point2D
+
+rectangle = Rectangle2D(6.0, 2.0, Point2D(1.0, 1.0))
+
+left = rectangle.left  # 1.0
+```
+
+### perimeter
+
+Returns the perimeter distance of the rectangle
+
+```python
+from BridgeMath import Rectangle2D, Point2D
+
+rectangle = Rectangle2D(6.0, 2.0, Point2D(1.0, 1.0))
+
+perimeter = rectangle.perimeter  # 16.0
+```
+
+### right
+
+Returns the x-coordinate of the rectangle's right edge
+
+```python
+from BridgeMath import Rectangle2D, Point2D
+
+rectangle = Rectangle2D(6.0, 2.0, Point2D(1.0, 1.0))
+
+right = rectangle.right  # 7.0
+```
+
+### top
+
+Returns the y-coordinate of the rectangle's top edge
+
+```python
+from BridgeMath import Rectangle2D, Point2D
+
+rectangle = Rectangle2D(6.0, 2.0, Point2D(1.0, 1.0))
+
+top = rectangle.top  # 3.0
+```
+
+## Overrides
+
+### \_\_eq\_\_(other)
+
+Checks for equality between two Rectangle2D objects. True if origin, width, and height are equal. False otherwise.
+
+```python
+from BridgeMath import Rectangle2D, Point2D
+
+rectangle1 = Rectangle2D(6.0, 2.0, Point2D(1.0, 1.0))
+rectangle2 = Rectangle2D(6.0, 2.0)
+
+print(rectangle1 == rectangle2)  # False (different origins)
+```
