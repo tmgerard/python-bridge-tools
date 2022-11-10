@@ -56,3 +56,6 @@ class Point3D:
         return effectively_equal(self.x, other.x) and \
                effectively_equal(self.y, other.y) and \
                effectively_equal(self.z, other.z)
+
+    def __str__(self):
+        return f'({self.x}, {self.y}, {self.z})'
