@@ -5,6 +5,7 @@
   - [Point2D](#point2d)
   - [Vector2D](#vector2d)
   - [Rectangle2D](#rectangle2d)
+  - [Segment2D](#segment2d)
 
 # Point2D
 
@@ -469,7 +470,7 @@ print(rectangle.contains_point(Point2D(2.0, 2.0)))  # Prints True to console
 Returns Polygon2D representing the rectangle
 
 ```python
-from BridgeMath import Rectangle2D, Point2D, Polygon2D
+from BridgeMath import Rectangle2D, Point2D
 
 rectangle = Rectangle2D(6.0, 2.0, Point2D(1.0, 1.0))
 
@@ -575,4 +576,150 @@ rectangle1 = Rectangle2D(6.0, 2.0, Point2D(1.0, 1.0))
 rectangle2 = Rectangle2D(6.0, 2.0)
 
 print(rectangle1 == rectangle2)  # False (different origins)
+```
+
+# Segment2D
+
+The Segment2D class defines a two-dimensional line segment with defined start and end coordinate points.
+
+## Initializer
+
+The Segment2D initializer takes two Point2D objects that define the start and end of the line segment.
+
+### Segment2D(start: Point2D, end: Point2D)
+
+```python
+from BridgeMath import Segment2D, Point2D
+
+segment = Segment2D(Point2D(0.0, 0.0), Point2D(3.0, 4.0))
+```
+
+## Methods
+
+### closest_point_to(point: Point2D)
+
+Returns a Point2D on the line segment that corresponds to the closest point in relation to a given Point2D object.
+
+```python
+from BridgeMath import Segment2D, Point2D
+
+segment = Segment2D(Point2D(0.0, 0.0), Point2D(3.0, 4.0))
+
+point = segment.closest_point_to(Point2D(1.0, 1.0))  # Point2D x=0.84 and y=1.12
+```
+
+### distance_to(point: Point2D)
+
+Returns the distance between a point in space and the closest point on the line segment.
+
+```python
+from BridgeMath import Segment2D, Point2D
+
+segment = Segment2D(Point2D(0.0, 0.0), Point2D(3.0, 4.0))
+
+distance = segment.distance_to(Point2D(1.0, 1.0))  # 1.9999...
+```
+
+### intersection_with(other: Segment2D)
+
+Returns a Point2D representing the intersection point between a given line segment and the current line segment. Returns ***None*** if no intersection exists.
+
+```python
+from BridgeMath import Segment2D, Point2D
+
+segment1 = Segment2D(Point2D(0.0, 0.0), Point2D(3.0, 4.0))
+segment2 = Segment2D(Point2D(0.0, 4.0), Point2D(3.0, 0.0))
+segment3 = Segment2D(Point2D(0.0, 1.0), Point2D(3.0, 5.0))
+
+point = segment1.intersection_with(segment2)   # Point2D x=1.5 and y=2.0
+point2 = segment1.intersection_with(segment3)  # Returns None
+```
+
+### point_at(ratio: float)
+
+Returns a Point2D at a location along the line segment. The given location is a ration from 0.0 to 1.0, where 0.0 corresponds to the start of the line segment and 1.0 corresponds to the end of the line segment.
+
+```python
+from BridgeMath import Segment2D, Point2D
+
+segment = Segment2D(Point2D(0.0, 0.0), Point2D(3.0, 4.0))
+
+point = segment.point_at(0.5)  # Point2D x=1.5 and y=2.0
+```
+
+## Properties
+
+### direction_vector
+
+Returns a vector between the start and end points of the line segment.
+
+```python
+from BridgeMath import Segment2D, Point2D
+
+segment = Segment2D(Point2D(0.0, 0.0), Point2D(3.0, 4.0))
+
+vector = segment.direction_vector  # Vector2D u=3.0 and v=4.0
+```
+
+### length
+
+Returns the length of the line segment
+
+```python
+from BridgeMath import Segment2D, Point2D
+
+segment = Segment2D(Point2D(0.0, 0.0), Point2D(3.0, 4.0))
+
+length = segment.length  # 5.0
+```
+
+### normal_unit_vector
+
+Returns a unit length vector that is perpendicular to the line segment.
+
+```python
+from BridgeMath import Segment2D, Point2D
+
+segment = Segment2D(Point2D(0.0, 0.0), Point2D(3.0, 4.0))
+
+vector = segment.normal_unit_vector  # Vector2D u=-0.8 and v=0.6
+```
+
+### point_at_middle
+
+Returns a Point2D that corresponds to the mid-point of the line segment.
+
+```python
+from BridgeMath import Segment2D, Point2D
+
+segment = Segment2D(Point2D(0.0, 0.0), Point2D(3.0, 4.0))
+
+point = segment.point_at_middle  # Point2D x=1.5 and y=2.0
+```
+
+### unit_direction_vector
+
+Returns a unit length vector that is directed from the start of the line segment to the end of the line segment.
+
+```python
+from BridgeMath import Segment2D, Point2D
+
+segment = Segment2D(Point2D(0.0, 0.0), Point2D(3.0, 4.0))
+
+vector = segment.unit_direction_vector  # Vector2D u=-0.6 and v=0.8
+```
+
+## Overrides
+
+### \_\_eq\_\_(other)
+
+Checks if a given Segment2D is equivalent to the current Segment2D. Returns True if the start and end points are equal. False otherwise.
+
+```python
+from BridgeMath import Segment2D, Point2D
+
+segment1 = Segment2D(Point2D(0.0, 0.0), Point2D(3.0, 4.0))
+segment2 = Segment2D(Point2D(0.0, 4.0), Point2D(3.0, 0.0))
+
+print(segment1 == segment2)  # Prints False to console
 ```
