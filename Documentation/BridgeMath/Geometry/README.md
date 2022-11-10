@@ -6,6 +6,13 @@
   - [Vector2D](#vector2d)
   - [Rectangle2D](#rectangle2d)
   - [Segment2D](#segment2d)
+- Three-Dimensional Geometry
+  - [Point3D](#point3d)
+  - [Vector3D]()
+- Factory Methods
+  - [make_rectangle2d_containing]()
+  - [make_rectangle2D_containing_with_padding]()
+  - [make_rectangle_centered]()
 
 # Point2D
 
@@ -722,4 +729,72 @@ segment1 = Segment2D(Point2D(0.0, 0.0), Point2D(3.0, 4.0))
 segment2 = Segment2D(Point2D(0.0, 4.0), Point2D(3.0, 0.0))
 
 print(segment1 == segment2)  # Prints False to console
+```
+
+# Point3D
+
+The Point3D class defines a three-dimensional cartesian (xyz) coordinate point.
+
+## Initializer
+
+The Point3D initializer requires an x, y, and z value to construct the object
+
+### Point2D(x, y, z)
+```python
+from BridgeMath import Point3D
+
+point = Point3D(2.0, 1.0, 4.0)
+```
+## Methods
+
+### displaced(vector: Vector3D, times)
+
+Returns a Point3D that is the current point displaced by a given Vector3D a specified number of times.
+
+```python
+from BridgeMath import Point3D, Vector3D
+
+point = Point3D(2.0, 1.0, 4.0)
+displaced = point.displaced(Vector3D(2.0, 2.0, 2.0), 1.0) # Point2D with x=4.0, y=3.0, and z=6.0
+```
+
+### distance_to(other: Point3D)
+
+Returns the distance to a given Point3D
+
+```python
+from BridgeMath import Point3D
+
+point1 = Point3D(2.0, 1.0, 4.0)
+point2 = Point3D(6.0, 10.0, 0.0)
+
+distance = point1.distance_to(point2)  # 10.6301...
+```
+
+## Overloads
+
+### \_\_sub\_\_(other: Point3D)
+
+Subtracts two Point3D objects and returns a Vector3D
+
+```python
+from BridgeMath import Point3D
+
+point1 = Point3D(2.0, 1.0, 4.0)
+point2 = Point3D(6.0, 10.0, 0.0)
+
+vec = point2 - point1  # Vector3D with u=4.0, v=9.0, and w=-4.0
+```
+
+### \_\_eq\_\_(other: Point3D)
+
+Tests for equality between two Point3D objects. True if x, y, and z values are equal. False otherwise.
+
+```python
+from BridgeMath import Point3D
+
+point1 = Point3D(2.0, 1.0, 4.0)
+point2 = Point3D(6.0, 10.0, 0.0)
+
+print(point1 == point2)  # Prints False to console 
 ```
