@@ -8,7 +8,7 @@
   - [Segment2D](#segment2d)
 - Three-Dimensional Geometry
   - [Point3D](#point3d)
-  - [Vector3D]()
+  - [Vector3D](#vector3d)
 - Factory Methods
   - [make_rectangle2d_containing]()
   - [make_rectangle2D_containing_with_padding]()
@@ -797,4 +797,164 @@ point1 = Point3D(2.0, 1.0, 4.0)
 point2 = Point3D(6.0, 10.0, 0.0)
 
 print(point1 == point2)  # Prints False to console 
+```
+
+# Vector3D
+
+The Vector2D class represents a three-dimensional vector with u, v, and w components representing displacement in the x, y, and z directions. 
+
+## Initializer
+
+The Vector3D initializer requires u, v, and w components to construct the object
+
+### Vector3D(u, v, w)
+
+```python
+from BridgeMath import Vector3D
+
+vector = Vector3D(3.0, 4.0, 1.0)
+```
+
+## Methods
+
+### cross(other: Vector3D)
+
+Returns a vector that is perpendicular to the current vector and a given vector by calculating the cross-product of the two vectors.
+
+```python
+from BridgeMath import Vector3D
+
+vector1 = Vector3D(3.0, 4.0, 1.0)
+vector2 = Vector3D(1.0, 2.0, 3.0)
+
+crossed = vector1.cross(vector2)  # Vector3D u=10.0, v=-8.0, and w=2.0
+```
+
+### dot(other: Vector3D)
+
+Returns the dot-product of two three-dimensional vectors.
+
+```python
+from BridgeMath import Vector3D
+
+vector1 = Vector3D(3.0, 4.0, 1.0)
+vector2 = Vector3D(1.0, 2.0, 3.0)
+
+dot = vector1.dot(vector2)  # 14.0
+```
+
+### normalized()
+
+Returns a vector of unit length in the direction of the original vector.
+
+```python
+from BridgeMath import Vector3D
+
+vector = Vector3D(3.0, 4.0, 1.0)
+
+normalized = vector.normalized()  #  Vector3D u=0.5883..., v=0.7844..., and w=0.1961...
+```
+
+### projection_over(other: Vector3D)
+
+Returns a vector projection of the original vector in a given vector's direction.
+
+```python
+from BridgeMath import Vector3D
+
+vector1 = Vector3D(3.0, 4.0, 1.0)
+vector2 = Vector3D(1.0, 2.0, 3.0)
+
+projection_vector = vector1.projection_over(vector2)  # Vector3D u=2.56..., v=5.13..., and w=7.69...
+```
+
+### scaled_by(factor: float)
+
+Scales the vector by a given factor
+
+```python
+from BridgeMath import Vector3D
+
+vector = Vector3D(3.0, 4.0, 1.0)
+
+scaled = vector.scaled_by(2.0)  # Vector3D u=6.0, v=8.0, and w=2.0
+```
+
+### with_length(length: float)
+
+Returns a vector with a given length in the direction of the original vector
+
+```python
+from BridgeMath import Vector3D
+
+vector = Vector3D(3.0, 4.0, 1.0)
+
+vector_with_length = vector.with_length(2.0)  # Vector3D u=1.76..., v=1.56..., and w=0.39...
+```
+
+## Properties
+
+### is_normal
+
+Checks if the vector is of unit length.
+
+```python
+from BridgeMath import Vector3D
+
+vector = Vector3D(3.0, 4.0, 1.0)
+
+print(vector.is_normal)  # False
+```
+
+### norm
+
+Returns the length of the vector.
+
+```python
+from BridgeMath import Vector3D
+
+vector = Vector3D(3.0, 4.0, 1.0)
+
+norm = vector.norm  # 5.09901...
+```
+
+## Overloads
+
+### \_\_add\_\_(other: Vector3D)
+
+Returns vector resulting from the addition of two Vector3D objects
+
+```python
+from BridgeMath import Vector3D
+
+vector1 = Vector3D(3.0, 4.0, 1.0)
+vector2 = Vector3D(1.0, 2.0, 3.0)
+
+new_vector = vector1 + vector2  # Vector3D u=4.0, v=6.0, and w=4.0
+```
+
+### \_\_sub\_\_(other: Vector3D)
+
+Returns vector resulting from the subtraction of two Vector3D objects
+
+```python
+from BridgeMath import Vector3D
+
+vector1 = Vector3D(3.0, 4.0, 1.0)
+vector2 = Vector3D(1.0, 2.0, 3.0)
+
+new_vector = vector1 - vector2  # Vector3D u=2.0, v=2.0, and w=-2.0
+```
+
+### \_\_eq\_\_(other)
+
+Checks if two Vector3D objects are equivalent. True if all components are equal. False otherwise.
+
+```python
+from BridgeMath import Vector3D
+
+vector1 = Vector3D(3.0, 4.0, 1.0)
+vector2 = Vector3D(1.0, 2.0, 3.0)
+
+print(vector1 == vector2)  # Prints False to console
 ```
