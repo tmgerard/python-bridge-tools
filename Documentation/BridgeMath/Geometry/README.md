@@ -10,9 +10,9 @@
   - [Point3D](#point3d)
   - [Vector3D](#vector3d)
 - Factory Methods
-  - [make_rectangle2d_containing]()
-  - [make_rectangle2D_containing_with_padding]()
-  - [make_rectangle_centered]()
+  - [make_rectangle2d_containing](#make_rectangle_containingpoints-listpoint2d)
+  - [make_rectangle2D_containing_with_padding](#make_rectangle_containing_with_paddingpoints-listpoint2d-padding-float)
+  - [make_rectangle_centered](#make_rectangle_centeredwidth-float-height-float-center-point2d)
 
 # Point2D
 
@@ -957,4 +957,58 @@ vector1 = Vector3D(3.0, 4.0, 1.0)
 vector2 = Vector3D(1.0, 2.0, 3.0)
 
 print(vector1 == vector2)  # Prints False to console
+```
+
+# Rectangle2D Factory Methods
+
+The following methods are used for creating Rectangle2D objects using a given criteria.
+
+### make_rectangle_containing(points: List[Point2D])
+
+Creates a Rectangle2D object that contains all points in a given list. The extreme points on each side will lie on the rectangle's nearest side.
+
+```python
+from BridgeMath import Point2D, make_rectangle2d_containing
+
+points_list = [
+  Point2D(0, 0),
+  Point2D(10, 2),
+  Point2D(3, 3),
+  Point2D(1, 12)
+]
+
+rectangle = make_rectangle2d_containing(points_list)
+```
+
+### make_rectangle_containing_with_padding(points: List[Point2D], padding: float)
+
+Creates a Rectangle2D object that contains all points in a given list, with a given separation between the nearest to each side of the rectangle.
+
+```python
+from BridgeMath import Point2D, make_rectangle2d_containing_with_padding
+
+points_list = [
+  Point2D(0, 0),
+  Point2D(10, 2),
+  Point2D(3, 3),
+  Point2D(1, 12)
+]
+
+padding = 5.0
+
+rectangle = make_rectangle2d_containing_with_padding(points_list, padding)
+```
+
+### make_rectangle_centered(width: float, height: float, center: Point2D)
+
+Creates a Rectangle2D object with a given point at the center of the rectangle.
+
+```python
+from BridgeMath import Point2D, make_rectangle_centered
+
+rectangle_width = 12.0
+rectangle_height = 4.0
+rectangle_center = Point2D(5.0, 5.0)
+
+rectangle = make_rectangle_centered(rectangle_width, rectangle_height, rectangle_center)
 ```
