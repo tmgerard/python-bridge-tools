@@ -16,14 +16,14 @@ class SiteClassSPT:
 
     def site_class(self, boring: SoilBoring, hammer_correction: float) -> SiteClassifications:
         sum_di = 0
-        sum_di_over_N = 0
+        sum_di_over_n = 0
         boring_length = boring.length()
 
         layer: SoilLayer
         for layer in boring.soil_layers:
             sum_di += boring_length
-            sum_di_over_N += layer.length() / min(int(layer.average_n_value() * hammer_correction),
-                                                       self.__MAX_N_VALUE)
+            sum_di_over_n += layer.length() / min(int(layer.average_n_value() * hammer_correction),
+                                                  self.__MAX_N_VALUE)
 
         if boring_length < self.__REQUIRED_BORING_DEPTH:
             remaining_length = self.__REQUIRED_BORING_DEPTH - boring_length
@@ -34,9 +34,9 @@ class SiteClassSPT:
                     break
 
             sum_di += remaining_length
-            sum_di_over_N += assumed_n_value
+            sum_di_over_n += assumed_n_value
 
-        average_n = int(sum_di / sum_di_over_N)
+        average_n = int(sum_di / sum_di_over_n)
 
         return self.get_spt_site_class(average_n)
 
