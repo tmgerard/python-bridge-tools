@@ -27,7 +27,7 @@ class Bridge:
 
     @property
     def bent_count(self):
-        return self.__bents.count()
+        return len(self.__bents)
 
     def set_begin_station(self, begin: float):
         if begin >= self.__end:
