@@ -1,9 +1,11 @@
 from BridgeMath import effectively_equal
 
+
 class DeformedRebar:
     """
     Represents a deformed steel bar for concrete reinforcement.
     """
+
     def __init__(self, designation: int, weight: float, diameter: float, area: float, perimeter: float):
         if weight <= 0:
             raise ValueError('Rebar weight must be a positive value')
