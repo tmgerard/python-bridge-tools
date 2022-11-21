@@ -1,0 +1,146 @@
+[
+  {
+    "Bar Designation": 3,
+    "Nominal Weight": 0.776,
+    "Diameter": 0.375,
+    "Area": 0.11,
+    "Perimeter": 1.178,
+    "Deformation":{
+      "Max Average Spacing": 0.262,
+      "Min Average Height": 0.015,
+      "Max Gap": 0.143
+    }
+  },
+  {
+    "Bar Designation": 4,
+    "Nominal Weight": 0.668,
+    "Diameter": 0.500,
+    "Area": 0.20,
+    "Perimeter": 1.571,
+    "Deformation":{
+      "Max Average Spacing": 0.350,
+      "Min Average Height": 0.020,
+      "Max Gap": 0.191
+    }
+  },
+  {
+    "Bar Designation": 5,
+    "Nominal Weight": 1.043,
+    "Diameter": 0.625,
+    "Area": 0.31,
+    "Perimeter": 1.963,
+    "Deformation":{
+      "Max Average Spacing": 0.437,
+      "Min Average Height": 0.028,
+      "Max Gap": 0.239
+    }
+  },
+  {
+    "Bar Designation": 6,
+    "Nominal Weight": 1.502,
+    "Diameter": 0.750,
+    "Area": 0.44,
+    "Perimeter": 2.356,
+    "Deformation":{
+      "Max Average Spacing": 0.525,
+      "Min Average Height": 0.038,
+      "Max Gap": 0.286
+    }
+  },
+  {
+    "Bar Designation": 7,
+    "Nominal Weight": 2.044,
+    "Diameter": 0.875,
+    "Area": 0.60,
+    "Perimeter": 2.749,
+    "Deformation":{
+      "Max Average Spacing": 0.612,
+      "Min Average Height": 0.044,
+      "Max Gap": 0.334
+    }
+  },
+  {
+    "Bar Designation": 8,
+    "Nominal Weight": 2.670,
+    "Diameter": 1.00,
+    "Area": 0.79,
+    "Perimeter": 3.142,
+    "Deformation":{
+      "Max Average Spacing": 0.700,
+      "Min Average Height": 0.050,
+      "Max Gap": 0.383
+    }
+  },
+  {
+    "Bar Designation": 9,
+    "Nominal Weight": 3.400,
+    "Diameter": 1.128,
+    "Area": 1.00,
+    "Perimeter": 3.544,
+    "Deformation":{
+      "Max Average Spacing": 0.790,
+      "Min Average Height": 0.056,
+      "Max Gap": 0.431
+    }
+  },
+  {
+    "Bar Designation": 10,
+    "Nominal Weight": 4.303,
+    "Diameter": 1.270,
+    "Area": 1.27,
+    "Perimeter": 3.990,
+    "Deformation":{
+      "Max Average Spacing": 0.889,
+      "Min Average Height": 0.064,
+      "Max Gap": 0.487
+    }
+  },
+  {
+    "Bar Designation": 11,
+    "Nominal Weight": 5.313,
+    "Diameter": 1.410,
+    "Area": 1.56,
+    "Perimeter": 4.430,
+    "Deformation":{
+      "Max Average Spacing": 0.987,
+      "Min Average Height": 0.071,
+      "Max Gap": 0.540
+    }
+  },
+  {
+    "Bar Designation": 14,
+    "Nominal Weight": 7.65,
+    "Diameter": 1.693,
+    "Area": 2.25,
+    "Perimeter": 5.32,
+    "Deformation":{
+      "Max Average Spacing": 1.185,
+      "Min Average Height": 0.085,
+      "Max Gap": 0.648
+    }
+  },
+  {
+    "Bar Designation": 18,
+    "Nominal Weight": 13.60,
+    "Diameter": 2.257,
+    "Area": 4.00,
+    "Perimeter": 7.09,
+    "Deformation":{
+      "Max Average Spacing": 1.58,
+      "Min Average Height": 0.102,
+      "Max Gap": 0.864
+    }
+  },
+  {
+    "Bar Designation": 20,
+    "Nominal Weight": 16.69,
+    "Diameter": 2.500,
+    "Area": 4.91,
+    "Perimeter": 7.85,
+    "Deformation":{
+      "Max Average Spacing": 1.75,
+      "Min Average Height": 0.113,
+      "Max Gap": 0.957
+    }
+  }
+]
