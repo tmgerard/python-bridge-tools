@@ -1,3 +1,5 @@
+from BridgeMath import effectively_equal
+
 class DeformedRebar:
     """
     Represents a deformed steel bar for concrete reinforcement.
@@ -52,3 +54,16 @@ class DeformedRebar:
         Perimeter of reinforcing bar
         """
         return self.__perimeter
+
+    def __eq__(self, other):
+        if self is other:
+            return True
+
+        if not isinstance(other, DeformedRebar):
+            return False
+
+        return self.designation == other.designation and \
+            effectively_equal(self.area, other.area) and \
+            effectively_equal(self.diameter, other.diameter) and \
+            effectively_equal(self.nominal_weight, other.nominal_weight) and \
+            effectively_equal(self.perimeter, other.perimeter)
