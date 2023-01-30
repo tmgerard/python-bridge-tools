@@ -22,13 +22,13 @@ class RoadwayAlignment:
         :param station: Station of desired elevation
         :return: Roadway elevation at centerline
         """
-        super = self.get_superelevation_at(station)
+        current_super = self.get_superelevation_at(station)
         normal_crown_slope = math.fabs(self.alignment_transitions.get_transition(station).normal_crown_slope)
 
-        if math.fabs(super) <= math.fabs(normal_crown_slope):
+        if current_super <= math.fabs(normal_crown_slope):
             return self.vertical.elevation_at(station)
         else:
-            return self.vertical.elevation_at(station) + self.to_rotation_point * (-normal_crown_slope + super)
+            return self.vertical.elevation_at(station) + self.to_rotation_point * (-normal_crown_slope + current_super)
 
     def get_roadway_elevation_at(self, station, offset: float) -> float:
         pass # TODO: Implement
