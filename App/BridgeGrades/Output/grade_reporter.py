@@ -20,9 +20,9 @@ class GradeReporter:
         )
     ]
     __TRANSITIONS_HEADER = [
-        '{0}{1:<10}{2:<20}{3:<20}{4:<15}{5}'.format(
-            'Superelevation Transition\n', 'Number', 'Begin Station', 'End Station', 'Length(ft)',
-            'Maximum Superelevation'
+        '{0}{1:<10}{2:<15}{3:<15}{4:<15}{5:<15}{6}'.format(
+            'Superelevation Transition\n', 'Number', 'Begin Station', 'RC Station', 'End Station', 'Length(ft)',
+            'Maximum Super'
         )
     ]
     __VERTICAL_ALIGNMENT_HEADER = [
@@ -96,10 +96,11 @@ class GradeReporter:
 
     def __super_transition_to_string(self, trans_number: int, transition: SuperelevationTransition) -> str:
         begin_sta = float_to_station_string(transition.begin_station)
+        rc_sta = float_to_station_string(transition.reverse_crown_station)
         end_sta = float_to_station_string(transition.end_station)
         max_super = transition.max_superelevation
         length = round(transition.length, self.decimal_precision)
-        return f'{trans_number:<10}{begin_sta:<20}{end_sta:<20}{length:<15,}{max_super:.2%}'
+        return f'{trans_number:<10}{begin_sta:<15}{rc_sta:<15}{end_sta:<15}{length:<15,}{max_super:.2%}'
 
     def __vertical_alignment_to_string(self) -> List[str]:
         return [
